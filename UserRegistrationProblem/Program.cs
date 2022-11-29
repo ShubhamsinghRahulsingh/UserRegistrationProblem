@@ -12,7 +12,7 @@ namespace UserRegistrationProblem
             {
                 Console.WriteLine("------------------------------------------------------");
                 Console.WriteLine("Select from the below which you want to validate");
-                Console.WriteLine("1.First Name\n2.Exit");
+                Console.WriteLine("1.First Name\n2.Last Name\n3.Exit");
                 Console.Write("Enter your choice: ");
                 int choice=Convert.ToInt32(Console.ReadLine());
                 switch(choice)
@@ -23,9 +23,13 @@ namespace UserRegistrationProblem
                         check.ValidateFirstName(firstName);
                         break;
                     case 2:
+                        Console.WriteLine("Enter your Last name");
+                        string lastName = Console.ReadLine();
+                        check.ValidateLastName(lastName);
+                        break;
+                    case 3:
                         flag = false;
                         break;
-
                 }
             }
         }

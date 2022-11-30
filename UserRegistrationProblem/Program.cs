@@ -12,7 +12,7 @@ namespace UserRegistrationProblem
             {
                 Console.WriteLine("------------------------------------------------------");
                 Console.WriteLine("Select from the below which you want to validate");
-                Console.WriteLine("1.First Name\n2.Last Name\n3.Email\n4.Exit");
+                Console.WriteLine("1.First Name\n2.Last Name\n3.Email\n4.Mobile Number\n5.Exit");
                 Console.Write("Enter your choice: ");
                 int choice=Convert.ToInt32(Console.ReadLine());
                 switch(choice)
@@ -33,6 +33,11 @@ namespace UserRegistrationProblem
                         check.ValidateEmail(email);
                         break;
                     case 4:
+                        Console.WriteLine("Enter your Mobile Number");
+                        string mobileNumber = Console.ReadLine();
+                        check.ValidateMobileNumber(mobileNumber);
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }

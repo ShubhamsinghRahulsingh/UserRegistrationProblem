@@ -13,7 +13,7 @@ namespace UserRegistrationProblem
         const string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string Email = "^[a-z]{3,}[.]{0,}[a-z]{0,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{0,}[a-z]{0,}$";
         const string mobileNumber = "^91[ ]{1}[5-9]{1}[0-9]{9}$";
-        const string password = "^(?=.*[A-Z])[A-Za-z]{8,}$";
+        const string password = "^(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9]{8,}$";
         public void ValidateFirstName(string input)
         {
             if(Regex.IsMatch(input, firstName))

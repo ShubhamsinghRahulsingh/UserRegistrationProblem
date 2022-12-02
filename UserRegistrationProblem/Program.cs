@@ -3,6 +3,7 @@ namespace UserRegistrationProblem
 {
     class Program
     {
+        public static string emailsFilePath = @"D:\GitRepository\UserRegistrationProblem\UserRegistrationProblem\File\EmailsData.txt";
         static void Main(string[] args)
         {
             PatternCheck check = new PatternCheck();
@@ -12,7 +13,7 @@ namespace UserRegistrationProblem
             {
                 Console.WriteLine("------------------------------------------------------");
                 Console.WriteLine("Select from the below which you want to validate");
-                Console.WriteLine("1.First Name\n2.Last Name\n3.Email\n4.Mobile Number\n5.Password\n6.Exit");
+                Console.WriteLine("1.First Name\n2.Last Name\n3.Email\n4.Mobile Number\n5.Password\n6.EmailsData Check\n7.Exit");
                 Console.Write("Enter your choice: ");
                 int choice=Convert.ToInt32(Console.ReadLine());
                 switch(choice)
@@ -43,6 +44,9 @@ namespace UserRegistrationProblem
                         check.ValidatePassword(password);
                         break;
                     case 6:
+                        check.ReadEmailsData(emailsFilePath);
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }

@@ -9,11 +9,13 @@ namespace UserRegistrationProblem
 {
     public class PatternCheck
     {
+        string[] emailsData;
         const string firstName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         const string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
-        const string Email = "^[a-z]{3,}[.]{0,}[a-z]{0,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{0,}[a-z]{0,}$";
+        const string email = "^[a-z]{3,}[.]{0,}[a-z]{0,}[@]{1}[a-z]{2,}[.]{1}[a-z]{2,}[.]{0,}[a-z]{0,}$";
         const string mobileNumber = "^91[ ]{1}[5-9]{1}[0-9]{9}$";
         const string password = "^(?=.*[!@#$%_])(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9!@#_$%]{8,}$";
+        const string emailsCheck = "^[a-zA-Z]+[.+_-]{0,1}[a-z0-9]+[@][a-zA-Z0-9]+[.][a-z]{2,3}([.][a-z]{2,3}){0,1}$";
         public void ValidateFirstName(string input)
         {
             if(Regex.IsMatch(input, firstName))
@@ -30,7 +32,7 @@ namespace UserRegistrationProblem
         }
         public void ValidateEmail(string input)
         {
-            if (Regex.IsMatch(input, Email))
+            if (Regex.IsMatch(input, email))
                 Console.WriteLine("Your Email Id is  " + input);
             else
                 Console.WriteLine("Entered Email is in invalid format.");
@@ -48,6 +50,22 @@ namespace UserRegistrationProblem
                 Console.WriteLine("Your Password is Correct ");
             else
                 Console.WriteLine("Entered Password is in invalid format.");
+        }
+        public void ReadEmailsData(string filepath)
+        {
+            var email = File.ReadAllText(filepath);
+            emailsData = email.Split(",");
+            ValidateEmailData(emailsData);
+        }
+        public void ValidateEmailData(string[] input)
+        {
+            foreach (var email in input)
+            {
+                if (Regex.IsMatch(email, emailsCheck))
+                    Console.WriteLine("{0} as Email Id is valid", email);
+                else
+                    Console.WriteLine("{0} as Email Id is invalid ", email);
+            }
         }
     }
 }

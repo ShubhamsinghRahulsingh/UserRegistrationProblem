@@ -21,30 +21,41 @@ namespace UserRegistrationProblem
                     case 1:
                         Console.WriteLine("Enter your First name");
                         string firstName=Console.ReadLine();
-                        check.ValidateFirstName(firstName);
+                        // check.ValidateFirstName(firstName);
+                        string result=check.ValidateFirstNameUsingLambda(firstName);
+                        Console.WriteLine(result);
                         break;
                     case 2:
                         Console.WriteLine("Enter your Last name");
                         string lastName = Console.ReadLine();
-                        check.ValidateLastName(lastName);
+                        // check.ValidateLastName(lastName);
+                        string resultt = check.ValidateLastNameUsingLambda(lastName);
+                        Console.WriteLine(resultt);
                         break;
                     case 3:
                         Console.WriteLine("Enter your Email Id");
                         string email = Console.ReadLine();
-                        check.ValidateEmail(email);
+                       // check.ValidateEmail(email);
+                        string vald=check.ValidateEmailUsingLambda(email);
+                        Console.WriteLine(vald);
                         break;
                     case 4:
                         Console.WriteLine("Enter your Mobile Number");
                         string mobileNumber = Console.ReadLine();
-                        check.ValidateMobileNumber(mobileNumber);
+                       // check.ValidateMobileNumber(mobileNumber);
+                        string mobile=check.ValidateMobileNumberUsingLambda(mobileNumber);
+                        Console.WriteLine(mobile);
                         break;
                     case 5:
                         Console.WriteLine("Enter your Password");
                         string password = Console.ReadLine();
-                        check.ValidatePassword(password);
+                        //check.ValidatePassword(password);
+                        string pass=check.ValidatePasswordUsingLambda(password);
+                        Console.WriteLine(pass);
                         break;
                     case 6:
-                        check.ReadEmailsData(emailsFilePath);
+                      // check.ReadEmailsData(emailsFilePath);
+                       check.ReadEmailsDataUsingLambda(emailsFilePath);
                         break;
                     case 7:
                         flag = false;
